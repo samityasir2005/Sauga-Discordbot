@@ -19,7 +19,7 @@ module.exports = class covid extends Command {
 
     let gaytedbed2 = new Discord.MessageEmbed()
       .addField("User", pUser.user.tag)
-      .addField("Penis Size", "D===================D");
+      .addField("Penis Size", "8===================D");
 
     if (pUser.id == "210893052628303872")
       return message.channel.send(gaytedbed2);
