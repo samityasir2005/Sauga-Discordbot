@@ -32,7 +32,7 @@ module.exports = class ban extends Command {
             x.user.username.toLowerCase() === args.slice(0).join(" ") ||
             x.user.username === args[0]
         );
-      const reason = args.join(" ") || "No Reason Specified";
+      const reason = args[1] || "No Reason Specified";
       if (user) {
         const embed = new Discord.MessageEmbed()
           .setColor("#FFFFF")
