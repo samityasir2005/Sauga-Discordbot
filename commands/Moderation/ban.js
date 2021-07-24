@@ -46,7 +46,18 @@ module.exports = class ban extends Command {
           .addField("Reason:\n", reason, false)
           .setFooter(`${client.user.tag} - Command Executed`)
           .setTimestamp();
-        user.send(embed);
+
+        const embedban = new Discord.MessageEmbed()
+          .setColor("#FFFFF")
+          .setTitle("You've been banned from SaugaEsports.")
+          .addField("Info:\n", "------------", false)
+          .addField("Staff ID:\n", message.author.id, true)
+          .addField("Reason:\n", reason, false)
+          .addField("Unban:\n", "never", false)
+          .setFooter(`${client.user.tag} - Command Executed`)
+          .setTimestamp();
+
+        user.send(embedban);
         await user.ban({ reason: reason });
         return message.channel.send(embed);
       } else {
